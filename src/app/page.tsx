@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <StickyContainer />
-      {/* <StickyContainer /> */}
+      <StickyContainer />
       {/* <Hero text={'Tomohiro'} /> */}
     </main>
   )

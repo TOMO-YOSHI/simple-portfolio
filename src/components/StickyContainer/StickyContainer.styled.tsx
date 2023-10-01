@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  height: 8000px;
+  height: 4000px;
   position: relative;
   border: 2px red solid;
 `;
@@ -18,4 +18,7 @@ export const StickyContent = styled.div`
   position: sticky;
   top: 0;
   border: 2px blue solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
