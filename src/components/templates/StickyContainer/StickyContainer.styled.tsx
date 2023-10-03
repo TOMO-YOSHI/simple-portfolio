@@ -4,6 +4,14 @@ export const Container = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100vh;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+  }
 `;
 
 export const InnerContainer = styled.div<{viewHeight: number}>`

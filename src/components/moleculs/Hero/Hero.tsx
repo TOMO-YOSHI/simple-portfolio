@@ -13,10 +13,10 @@ export const Hero: React.FC<HeroProps> = ({ mainText, percentage = 100, subText}
       <Styled.HeroSection>
         <Styled.TargetTextPosition>
           <Styled.WaterEffectTextContainer $percentage={percentage}>
-            <h2>{mainText}</h2>
-            <h2>{mainText}</h2>
-            <p>{subText}</p>
             <div />
+            <h2>{mainText}</h2>
+            <h2>{subText}</h2>
+            {/* <p>{subText}</p> */}
           </Styled.WaterEffectTextContainer>
         </Styled.TargetTextPosition>
       </Styled.HeroSection>

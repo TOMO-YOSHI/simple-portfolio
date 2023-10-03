@@ -128,16 +128,11 @@ const waterEffectLow = keyframes`
 
 const textColor = "#ffffff"
 const backgroundColor = "#141414"
-// const backgroundColor = "#ffffff"
-// const textColor = "#141414"
 
 export const HeroSection = styled.section`
   top: 0;
   height: 100vh;
   width: 100vw;
-`;
-
-export const StickyContainer = styled.div`
 `;
 
 export const TargetTextPosition = styled.div`
@@ -149,31 +144,25 @@ export const TargetTextPosition = styled.div`
 
 export const WaterEffectTextContainer = styled.div<{$percentage: number}>`
   position: relative;
-	height: 100lvh;
+	height: 100vh;
 	width: 100vw;
 	background: ${backgroundColor};
   
   h2 {
-    /* color: #fff; */
-    /* color: ${backgroundColor}; */
-    color: ${textColor};
 		background: transparent;
-    font-size: 8em;
+    font-size: 3rem;
     position: absolute;
-		top: 42%;
+		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -42%);
+		transform: translate(-50%, -50%);
 		z-index: 100;
 
-    &:nth-child(1) {
-      color: transparent;
-      /* -webkit-text-stroke: 2px ${backgroundColor}; */
-      -webkit-text-stroke: 2px ${textColor};
-    }
     &:nth-child(2) {
-      /* color: ${backgroundColor}; */
       color: ${textColor};
-      animation: ${waterEffect} 4s ease-in-out infinite;
+    }
+    &:nth-child(3) {
+      color: ${backgroundColor};
+      visibility: ${({ $percentage }) => $percentage > 50 ? 'visible' : 'hidden'};
     }
   }
 
@@ -182,22 +171,30 @@ export const WaterEffectTextContainer = styled.div<{$percentage: number}>`
 		background: transparent;
 		color: ${textColor};
 		font-size: 2rem;
-		top: 60%;
+		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -60%);
+		transform: translate(-50%, -50%);
 		border-top: ${textColor} 2px solid;
 		border-bottom: ${textColor} 2px solid;
 	}
 
 	div {
-		/* background: ${backgroundColor}; */
 		background: ${textColor};
 		position: absolute;
-		/* z-index: 100; */
 		width: 100%;
-		/* height: 100%; */
 		height: ${props => props.$percentage}%;
 		bottom: 0;
 		animation: ${waterEffectHigh} 4s ease-in-out infinite;
 	}
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 6rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 8rem;
+    }
+  }
 `;
