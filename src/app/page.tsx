@@ -1,14 +1,12 @@
 "use client";
-import Image from 'next/image';
 import { Hero } from '@/components/moleculs/Hero';
 import { StickyContainer } from '@/components/templates/StickyContainer';
-import { Layout } from '@/components/templates/Layout/Layout';
-import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main>
       <StickyContainer
+        height={1000}
         child={(percentage) => {
           return (
             <Hero
@@ -19,11 +17,6 @@ export default function Home() {
           )
         }}
       />
-      {/* <Layout>
-        
-      </Layout> */}
-      {/* <StickyContainer /> */}
-      {/* <Hero text={'Tomohiro'} /> */}
     </main>
   )
 }
