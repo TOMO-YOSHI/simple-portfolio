@@ -30,7 +30,7 @@ export const About = ({ percentage }: AboutProps) => {
           <p>Passionate about staying up-to-date with the latest trend.</p>
         }
       </Styled.AboutSection>
-      {/* <Styled.sectionTransition $percentage={(percentage - 95) / 5 * 100} /> */}
+      {/* <AbsInstruction>← Scroll</AbsInstruction> */}
     </>
   )
 }

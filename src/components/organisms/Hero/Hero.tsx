@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import * as Styled from './Hero.styled';
+import { AbsInstruction } from '@/styles/Common.styled';
 
 export interface HeroProps {
   percentage?: number;
@@ -18,6 +19,7 @@ export const Hero: React.FC<HeroProps> = ({percentage = 100,}) => {
             {/* <p>{subText}</p> */}
           </Styled.WaterEffectTextContainer>
         </Styled.TargetTextPosition>
+        <AbsInstruction>← Scroll</AbsInstruction>
       </Styled.HeroSection>
   )
 }

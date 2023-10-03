@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { commonSectionStyle, colors } from '@/styles/Common.styled';
+import { commonSectionStyle, colors } from '@/styles/variables';
 import { fadeIn, slightWaving, waterEffectHigh } from '@/styles/animations';
 
 export const AboutSection = styled.section`
@@ -31,7 +31,7 @@ export const WavingHand = styled.div`
   font-size: 5rem;
   transform: translate(-50%, -50%);
   opacity: 0;
-  animation: ${slightWaving} 2s linear;
+  animation: ${slightWaving} 2.5s linear;
 `;
 
 export const SectionHeading = styled.h2`

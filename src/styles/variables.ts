@@ -8,19 +8,25 @@ export const colors = {
   white: '#ffffff'
 };
 
+export const breakPoints = {
+  md: 768,
+  lg: 1024,
+  xl: 1280
+}
+
 export const commonSectionStyle = css`
   max-width: 1024px;
   padding-left: 1rem;
   padding-right: 1rem;
-  @media (min-width: 768px) {
+  @media (min-width: ${breakPoints.md}px) {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: ${breakPoints.lg}px) {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  @media (min-width: 1280px) {
+  @media (min-width:  ${breakPoints.xl}px) {
     padding-left: auto;
     padding-right: auto;
   }
