@@ -2,12 +2,13 @@ import { styled } from 'styled-components';
 import { commonSectionStyle, colors } from '@/styles/variables';
 import { fadeIn, slightWaving, waterEffectHigh } from '@/styles/animations';
 
-export const AboutSection = styled.section`
+export const AboutSection = styled.section<{ $percentage: number }>`
   ${commonSectionStyle}
+  position: absolute;
   top: 0;
   height: 100vh;
   width: 100vw;
-  color: ${colors.black};
+  color: ${({ $percentage }) => $percentage < 95 ? colors.black : colors.white};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +39,7 @@ export const SectionHeading = styled.h2`
 
 `;
 
-export const sectionTransition = styled.div<{ $percentage: number }>`
+export const SectionTransition = styled.div<{ $percentage: number }>`
 		background: ${colors.black};
 		position: absolute;
 		width: 100%;

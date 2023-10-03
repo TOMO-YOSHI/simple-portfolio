@@ -29,6 +29,16 @@ export default function Home() {
               )
             }}
           />
+          <StickyContainer
+            height={2000}
+            child={(percentage) => {
+              return (
+                <About
+                  percentage={percentage}
+                />
+              )
+            }}
+          />
         </main>
       </Layout>
     </>

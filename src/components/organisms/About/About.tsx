@@ -8,7 +8,8 @@ interface AboutProps {
 export const About = ({ percentage }: AboutProps) => {
   return (
     <>
-      <Styled.AboutSection>
+      <Styled.SectionTransition $percentage={(percentage - 90) / 10 * 100} />
+      <Styled.AboutSection $percentage={percentage}>
         <h2>About Me</h2>
         {
           percentage > 10 &&
@@ -30,7 +31,6 @@ export const About = ({ percentage }: AboutProps) => {
           <p>Passionate about staying up-to-date with the latest trend.</p>
         }
       </Styled.AboutSection>
-      {/* <AbsInstruction>← Scroll</AbsInstruction> */}
     </>
   )
 }
