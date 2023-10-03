@@ -4,10 +4,11 @@ import * as Styled from './StickyContainer.styled';
 
 interface StickyContainerProps {
   child: (percentage: number) => ReactNode;
+  height: number;
 }
 
-export const StickyContainer = ({ child }: StickyContainerProps) => {
-  const [viewHeight] = useState(4000);
+export const StickyContainer = ({ child, height }: StickyContainerProps) => {
+  const [viewHeight] = useState(height);
   const containerRef = useRef<HTMLDivElement>(null);
   const innerContainerRef = useRef<HTMLDivElement>(null);
   const stickyContainerRef = useRef<HTMLDivElement>(null);
