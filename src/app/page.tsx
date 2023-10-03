@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <StickyContainer
-        height={1000}
+        height={2000}
         child={(percentage) => {
           return (
             <Hero
@@ -18,7 +18,7 @@ export default function Home() {
         }}
       />
       <StickyContainer
-        height={1000}
+        height={2000}
         child={(percentage) => {
           return (
             <Hero

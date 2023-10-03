@@ -135,9 +135,6 @@ export const HeroSection = styled.section`
   width: 100vw;
 `;
 
-export const StickyContainer = styled.div`
-`;
-
 export const TargetTextPosition = styled.div`
 	position: absolute;
   top: 50%;
@@ -165,7 +162,7 @@ export const WaterEffectTextContainer = styled.div<{$percentage: number}>`
     }
     &:nth-child(3) {
       color: ${backgroundColor};
-      visibility: ${({ $percentage }) => $percentage > 30 ? 'visible' : 'hidden'};
+      visibility: ${({ $percentage }) => $percentage > 50 ? 'visible' : 'hidden'};
     }
   }
 
