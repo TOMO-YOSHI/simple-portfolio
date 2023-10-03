@@ -17,6 +17,18 @@ export default function Home() {
           )
         }}
       />
+      <StickyContainer
+        height={1000}
+        child={(percentage) => {
+          return (
+            <Hero
+              mainText={"Tomohiro"}
+              subText={"Full Stack Dev"}
+              percentage={percentage}
+            />
+          )
+        }}
+      />
     </main>
   )
 }
