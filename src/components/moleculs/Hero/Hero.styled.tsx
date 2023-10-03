@@ -126,13 +126,15 @@ const waterEffectLow = keyframes`
   }
 `;
 
+const textColor = "#ffffff"
+const backgroundColor = "#141414"
+// const backgroundColor = "#ffffff"
+// const textColor = "#141414"
 
 export const HeroSection = styled.section`
   top: 0;
   height: 100vh;
   width: 100vw;
-  /* height: 200px;
-  width: 200px */
 `;
 
 export const StickyContainer = styled.div`
@@ -149,11 +151,12 @@ export const WaterEffectTextContainer = styled.div<{$percentage: number}>`
   position: relative;
 	height: 100lvh;
 	width: 100vw;
-	background: #141414;
+	background: ${backgroundColor};
   
   h2 {
     /* color: #fff; */
-    color: #141414;
+    /* color: ${backgroundColor}; */
+    color: ${textColor};
 		background: transparent;
     font-size: 8em;
     position: absolute;
@@ -164,31 +167,31 @@ export const WaterEffectTextContainer = styled.div<{$percentage: number}>`
 
     &:nth-child(1) {
       color: transparent;
-      /* -webkit-text-stroke: 2px #141414; */
-      -webkit-text-stroke: 2px #ffffff;
+      /* -webkit-text-stroke: 2px ${backgroundColor}; */
+      -webkit-text-stroke: 2px ${textColor};
     }
     &:nth-child(2) {
-      /* color: #141414; */
-      color: #ffffff;
+      /* color: ${backgroundColor}; */
+      color: ${textColor};
       animation: ${waterEffect} 4s ease-in-out infinite;
     }
   }
 
 	p {
 		position: absolute;
-		background: #141414;
-		color: #ffffff;
+		background: transparent;
+		color: ${textColor};
 		font-size: 2rem;
 		top: 60%;
 		left: 50%;
 		transform: translate(-50%, -60%);
-		border-top: #ffffff 2px solid;
-		border-bottom: #ffffff 2px solid;
+		border-top: ${textColor} 2px solid;
+		border-bottom: ${textColor} 2px solid;
 	}
 
 	div {
-		/* background: #141414; */
-		background: #ffffff;
+		/* background: ${backgroundColor}; */
+		background: ${textColor};
 		position: absolute;
 		/* z-index: 100; */
 		width: 100%;
