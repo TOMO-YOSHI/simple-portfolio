@@ -1,9 +1,8 @@
 import { styled } from 'styled-components';
 
-export const Container = styled.div`
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 100vh;
+export const Container = styled.div<{ height: number }>`
+  height: ${({ height }) => `${height}px`};
+  position: relative;
 
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -12,11 +11,6 @@ export const Container = styled.div`
     width: 0;
     height: 0;
   }
-`;
-
-export const InnerContainer = styled.div<{viewHeight: number}>`
-  height: ${({ viewHeight }) => `${viewHeight}px`};
-  position: relative;
 `;
 
 export const StickyContent = styled.div`

@@ -4,8 +4,8 @@ import { fadeIn, slightWaving, waterEffectHigh } from '@/styles/animations';
 
 export const AboutSection = styled.section<{ $percentage: number }>`
   ${commonSectionStyle}
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   height: 100vh;
   width: 100vw;
   color: ${({ $percentage }) => $percentage < 95 ? colors.black : colors.white};
@@ -46,4 +46,5 @@ export const SectionTransition = styled.div<{ $percentage: number }>`
 		height: ${props => props.$percentage}%;
 		bottom: 0;
 		animation: ${waterEffectHigh} 4s ease-in-out infinite;
+    z-index: -1;
 `;

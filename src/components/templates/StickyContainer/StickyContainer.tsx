@@ -10,42 +10,35 @@ interface StickyContainerProps {
 export const StickyContainer = ({ child, height }: StickyContainerProps) => {
   const [viewHeight] = useState(height);
   const containerRef = useRef<HTMLDivElement>(null);
-  const innerContainerRef = useRef<HTMLDivElement>(null);
   const stickyContainerRef = useRef<HTMLDivElement>(null);
   const [scrollPercentage, setScrollPercentage1] = useState(0);
 
   useEffect(() => {
     const onScroll = () => {
-      if (containerRef.current && innerContainerRef.current && stickyContainerRef.current) {
+      if (containerRef.current && stickyContainerRef.current) {
         const containerRect = containerRef.current.getBoundingClientRect();
-        const innerContainerRect = innerContainerRef.current.getBoundingClientRect();
         const stickyContainerRect = stickyContainerRef.current.getBoundingClientRect();
-        const offTop = containerRect.y - innerContainerRect.y
-        const maxScrollableHeight = viewHeight - stickyContainerRect.height;
-
-        setScrollPercentage1(Math.round(offTop / maxScrollableHeight * 100))
+        const scrolledHeight = containerRect.y <= 0 ? Math.abs(containerRect.y) : 0;
+        const scrollableHeight = viewHeight - stickyContainerRect.height + 15;
+        
+        setScrollPercentage1(Math.round(scrolledHeight / scrollableHeight * 100) <= 99 ? Math.round(scrolledHeight / scrollableHeight * 100) : 100 );
       }
     };
 
     if (containerRef.current) {
-      const containerCurrent = containerRef.current;
-      containerCurrent.addEventListener('scroll', onScroll);
+      window.addEventListener('scroll', onScroll);
 
       return () => {
-        if (containerCurrent) {
-          containerCurrent.removeEventListener('scroll', onScroll);
-        }
+        window.removeEventListener('scroll', onScroll);
       };
     }
   }, []);
 
   return (
-    <Styled.Container ref={containerRef}>
-      <Styled.InnerContainer ref={innerContainerRef} viewHeight={viewHeight}>
+    <Styled.Container ref={containerRef} height={height}>
         <Styled.StickyContent ref={stickyContainerRef}>
           {child(scrollPercentage)}
         </Styled.StickyContent>
-      </Styled.InnerContainer>
     </Styled.Container>
   );
 }

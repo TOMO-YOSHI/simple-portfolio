@@ -7,7 +7,7 @@ interface AboutProps {
 
 export const About = ({ percentage }: AboutProps) => {
   return (
-    <>
+    <div style={{position: 'relative'}}>
       <Styled.SectionTransition $percentage={(percentage - 90) / 10 * 100} />
       <Styled.AboutSection $percentage={percentage}>
         <h2>About Me</h2>
@@ -31,6 +31,6 @@ export const About = ({ percentage }: AboutProps) => {
           <p>Passionate about staying up-to-date with the latest trend.</p>
         }
       </Styled.AboutSection>
-    </>
+    </div>
   )
 }
