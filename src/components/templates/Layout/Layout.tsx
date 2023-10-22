@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
-import { StickyContainer } from '../StickyContainer';
-import { Hero } from '@/components/moleculs/Hero';
+import * as Styled from './Layout.styled';
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,10 +7,8 @@ interface LayoutProps {
 
 export const Layout = ({children}: LayoutProps) => {
   return (
-    <div>
-      <StickyContainer>
-        {children}
-      </StickyContainer>
-    </div>
+    <Styled.Layout>
+      {children}
+    </Styled.Layout>
   )
 }
