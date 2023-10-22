@@ -10,6 +10,7 @@ export const HeroSection = styled.section`
   top: 0;
   height: 100vh;
   width: 100vw;
+  position: sticky;
 `;
 
 export const TargetTextPosition = styled.div`

@@ -7,7 +7,7 @@ export interface HeroProps {
   percentage?: number;
 }
 
-export const Hero: React.FC<HeroProps> = ({percentage = 100,}) => {
+export const Hero = ({ percentage = 100 }: HeroProps) => {
   return (
       <Styled.HeroSection>
         <Styled.TargetTextPosition>
